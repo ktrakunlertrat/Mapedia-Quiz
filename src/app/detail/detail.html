@@ -1,0 +1,73 @@
+<app-header></app-header>
+<div class="flex p-2">
+  <app-sidebar></app-sidebar>
+    <main class="flex-1 border bg-white rounded-2xl shadow-lg p-4 mt-1 h-full">
+    <h1 class="text-2xl font-bold mb-4">My Files</h1>
+
+    <div class="w-full mx-auto border-t border-gray-200 mb-4"></div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="flex items-center p-2">
+          <img src="home.png" alt="Home Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#B3B6BA]">Home</span>
+        </a>
+        <img src="careright.png" alt="Arrow Icon" class="w-5 h-5" />
+        <a href="#" class="flex items-center p-2">
+          <span class="mr-2 font-semibold text-[#B3B6BA]">Projects</span>
+        </a>
+        <img src="careright.png" alt="Arrow Icon" class="w-5 h-5" />
+        <a href="#" class="flex items-center p-2">
+          <span class="mr-2 font-semibold text-[#475569]">My Project by Mapedia</span>
+        </a>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <a href="#" class="flex items-center p-2">
+          <img src="calendar.png" alt="Calendar Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">Newest First</span>
+          <img src="caredown.png" alt="Caredown Icon" class="w-5 h-5" />
+        </a>
+        <a href="#" class="flex items-center p-2">
+          <img src="gridfour.png" alt="Gridfour Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">Grid View</span>
+        </a>
+      </div>
+    </div>
+
+    <h1 class="text-2xl font-bold mt-2 mb-4">My images</h1>
+
+    <div class="p-4 grid grid-cols-4 gap-4">
+
+        <div
+            class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+            *ngFor="let card of cards"
+            >
+            <img [src]="card.image" alt="Project Image" class="w-full h-40 object-cover" />
+            <div class="flex items-center justify-between px-3 py-2">
+                <p class="text-gray-700 text-sm font-bold">{{ card.fileName }}</p>
+                <div class="flex items-center space-x-2">
+                    <img [src]="card.icon1" alt="IMG Icon" class="w-5 h-5" />
+                    <img [src]="card.icon2" alt="Menu Icon" class="w-5 h-5" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex justify-center mt-6 space-x-2">
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-gray-600 hover:bg-gray-300">
+        <img src="careleft2.png" alt="Previous Icon" class="w-5 h-5" />
+      </button>
+
+      <button class="px-3 py-1 rounded-lg bg-[#076C80] text-white">1</button>
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-[#076C80] hover:bg-gray-300">2</button>
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-[#076C80] hover:bg-gray-300">3</button>
+
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-gray-600 hover:bg-gray-300">
+        <img src="careright2.png" alt="Next Icon" class="w-5 h-5" />
+      </button>
+    </div>
+  </main>
+</div>
+<router-outlet></router-outlet>
