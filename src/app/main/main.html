@@ -1,0 +1,104 @@
+  <main class="flex-1 border bg-white rounded-2xl shadow-lg p-4 mt-1 h-full">
+    <h1 class="text-2xl font-bold mb-4">My Files</h1>
+
+    <div class="w-full mx-auto border-t border-gray-200 mb-4"></div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center">
+        <a href="#" class="flex items-center p-2">
+          <img src="home.png" alt="Home Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#B3B6BA]">Home</span>
+        </a>
+        <img src="careright.png" alt="Arrow Icon" class="w-5 h-5" />
+        <a href="#" class="flex items-center p-2">
+          <span class="mr-2 font-semibold text-[#475569]">Projects</span>
+        </a>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <a href="#" class="flex items-center p-2">
+          <img src="calendar.png" alt="Calendar Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">Newest First</span>
+          <img src="caredown.png" alt="Caredown Icon" class="w-5 h-5" />
+        </a>
+        <a href="#" class="flex items-center p-2">
+          <img src="gridfour.png" alt="Gridfour Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">Grid View</span>
+        </a>
+      </div>
+    </div>
+
+    <h1 class="text-2xl font-bold mt-2 mb-4">Projects</h1>
+
+    <div class="p-4 grid grid-cols-4 gap-4">
+
+      <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+        <img src="topview.png" alt="Project Image" class="w-full h-40 object-cover" />
+        <div class="flex items-center justify-between px-3 py-2">
+          <p class="text-gray-700 text-sm font-bold">My Project by Mapedia</p>
+          <div class="flex items-center space-x-2">
+            <img src="db1.png" alt="DB Icon" class="w-5 h-5" />
+            <img src="dot3-1.png" alt="Menu Icon" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+        <img src="topview.png" alt="Project Image" class="w-full h-40 object-cover" />
+        <div class="flex items-center justify-between px-3 py-2">
+          <p class="text-gray-700 text-sm font-bold">My Project by Mapedia 2</p>
+          <div class="flex items-center space-x-2">
+            <img src="db2.png" alt="DB Icon" class="w-5 h-5" />
+            <img src="dot3-1.png" alt="Menu Icon" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+        <img src="topview.png" alt="Project Image" class="w-full h-40 object-cover" />
+        <div class="flex items-center justify-between px-3 py-2">
+          <p class="text-gray-700 text-sm font-bold">My Project by Mapedia 3</p>
+          <div class="flex items-center space-x-2">
+            <img src="db3.png" alt="DB Icon" class="w-5 h-5" />
+            <img src="dot3-1.png" alt="Menu Icon" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+        <img src="topview.png" alt="Project Image" class="w-full h-40 object-cover" />
+        <div class="flex items-center justify-between px-3 py-2">
+          <p class="text-gray-700 text-sm font-bold">My Project by Mapedia 4</p>
+          <div class="flex items-center space-x-2">
+            <img src="db4.png" alt="DB Icon" class="w-5 h-5" />
+            <img src="dot3-1.png" alt="Menu Icon" class="w-5 h-5" />
+          </div>
+        </div>
+      </div>
+
+      <div *ngFor="let card of cards" id="img_mock" class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-[#F9FAFB] flex flex-col justify-between">
+        <div class="flex justify-center items-center h-40">
+          <img [src]="card.img" alt="Image Icon" class="w-16 h-16" />
+        </div>
+        <div class="flex items-center justify-between px-3 py-2 border-t bg-white">
+          <p class="text-gray-700 text-sm font-bold">{{ card.title }}</p>
+          <img src="dot3-2.png" alt="Menu Icon" class="w-5 h-5" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center mt-6 space-x-2">
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-gray-600 hover:bg-gray-300">
+        <img src="careleft2.png" alt="Previous Icon" class="w-5 h-5" />
+      </button>
+
+      <button class="px-3 py-1 rounded-lg bg-[#076C80] text-white">1</button>
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-[#076C80] hover:bg-gray-300">2</button>
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-[#076C80] hover:bg-gray-300">3</button>
+
+      <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-gray-600 hover:bg-gray-300">
+        <img src="careright2.png" alt="Next Icon" class="w-5 h-5" />
+      </button>
+    </div>
+  </main>
