@@ -15,9 +15,20 @@ export class Main {
     img: 'imgicon.png'
   }));
 
-  constructor(private router: Router) {}
+  rows: number[] = [];
+
+  constructor(private router: Router) {
+    this.rows = Array.from({ length: 16 }, (_, index) => index + 5);
+  }
 
   goToDetail() {
     this.router.navigate(['/detail']);
+  }
+
+  isGridView: boolean = false;
+
+  toggleGridView(event: Event): void {
+    event.preventDefault();
+    this.isGridView = !this.isGridView;
   }
 }

@@ -21,27 +21,19 @@
           <span class="mr-2 font-semibold text-[#475569]">Newest First</span>
           <img src="caredown.png" alt="Caredown Icon" class="w-5 h-5" />
         </a>
-        <a href="#" class="flex items-center p-2">
-          <img src="gridfour.png" alt="Gridfour Icon" class="w-5 h-5 mr-2" />
-          <span class="mr-2 font-semibold text-[#475569]">Grid View</span>
+        <a href="#" class="flex items-center p-2" (click)="toggleGridView($event)">
+          <img [src]="isGridView ? 'burger2.png' : 'gridfour.png'" 
+              alt="Toggle Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">
+            {{ isGridView ? 'List View' : 'Grid View' }}
+          </span>
         </a>
       </div>
     </div>
 
     <h1 class="text-2xl font-bold mt-2 mb-4">Projects</h1>
 
-    <div class="p-4 grid grid-cols-4 gap-4">
-
-      <!-- <div class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-        <img src="topview.png" alt="Project Image" class="w-full h-40 object-cover" />
-        <div class="flex items-center justify-between px-3 py-2">
-          <p class="text-gray-700 text-sm font-bold">My Project by Mapedia</p>
-          <div class="flex items-center space-x-2">
-            <img src="db1.png" alt="DB Icon" class="w-5 h-5" />
-            <img src="dot3-1.png" alt="Menu Icon" class="w-5 h-5" />
-          </div>
-        </div>
-      </div> -->
+    <div *ngIf="!isGridView" class="p-4 grid grid-cols-4 gap-4">
 
       <div 
         class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
@@ -101,6 +93,157 @@
       </div>
 
     </div>
+
+    <div *ngIf="isGridView" class="p-4">
+      <table class="min-w-full overflow-hidden">
+        <thead class="border-b">
+          <tr>
+            <th class="px-4 py-2 text-left text-[#076C80] font-bold">#</th>
+            <th class="px-4 py-2 text-left text-gray-700">Project Name</th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>Create Date</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>Size (mb)</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>Status</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">Owner</th>
+            <th class="px-4 py-2 text-left text-gray-700">Number of images</th>
+            <th class="px-4 py-2 text-left text-gray-700">ImageDescription</th>
+            <th class="px-4 py-2 text-left text-gray-700">ISO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cursor-pointer" (click)="goToDetail()">
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">1</td>
+            <td class="px-4 py-2 text-left text-gray-700">My Project by Mapedia</td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                <img src="db1.png" alt="DB Icon" class="w-5 h-5" />
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">mapedia.analytics@gmail.com</td>
+            <td class="px-4 py-2 text-left text-gray-700">150</td>
+            <td class="px-4 py-2 text-left text-gray-700">create by dju camera</td>
+            <td class="px-4 py-2 text-left text-gray-700">104</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">2</td>
+            <td class="px-4 py-2 text-left text-gray-700">My Project by Mapedia 2</td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                <img src="db2.png" alt="DB Icon" class="w-5 h-5" />
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">mapedia.analytics@gmail.com</td>
+            <td class="px-4 py-2 text-left text-gray-700">300</td>
+            <td class="px-4 py-2 text-left text-gray-700">create by dju camera</td>
+            <td class="px-4 py-2 text-left text-gray-700">104</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">3</td>
+            <td class="px-4 py-2 text-left text-gray-700">My Project by Mapedia 3</td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                <img src="db3.png" alt="DB Icon" class="w-5 h-5" />
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">mapedia.analytics@gmail.com</td>
+            <td class="px-4 py-2 text-left text-gray-700">230</td>
+            <td class="px-4 py-2 text-left text-gray-700">create by dju camera</td>
+            <td class="px-4 py-2 text-left text-gray-700">104</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">4</td>
+            <td class="px-4 py-2 text-left text-gray-700">My Project by Mapedia 4</td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                <img src="db4.png" alt="DB Icon" class="w-5 h-5" />
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">mapedia.analytics@gmail.com</td>
+            <td class="px-4 py-2 text-left text-gray-700">493</td>
+            <td class="px-4 py-2 text-left text-gray-700">create by dju camera</td>
+            <td class="px-4 py-2 text-left text-gray-700">104</td>
+          </tr>
+          <tr *ngFor="let i of rows">
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">{{ i }}</td>
+            <td class="px-4 py-2 text-left text-gray-700">images group</td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                -
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">mapedia.analytics@gmail.com</td>
+            <td class="px-4 py-2 text-left text-gray-700">-</td>
+            <td class="px-4 py-2 text-left text-gray-700">-</td>
+            <td class="px-4 py-2 text-left text-gray-700">-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
 
     <div class="flex justify-center mt-6 space-x-2">
       <button class="px-3 py-1 rounded-lg bg-[#D5E2E1] text-gray-600 hover:bg-gray-300">

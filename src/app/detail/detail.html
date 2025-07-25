@@ -28,16 +28,19 @@
           <span class="mr-2 font-semibold text-[#475569]">Newest First</span>
           <img src="caredown.png" alt="Caredown Icon" class="w-5 h-5" />
         </a>
-        <a href="#" class="flex items-center p-2">
-          <img src="gridfour.png" alt="Gridfour Icon" class="w-5 h-5 mr-2" />
-          <span class="mr-2 font-semibold text-[#475569]">Grid View</span>
+        <a href="#" class="flex items-center p-2" (click)="toggleGridView($event)">
+          <img [src]="isGridView ? 'burger2.png' : 'gridfour.png'" 
+              alt="Toggle Icon" class="w-5 h-5 mr-2" />
+          <span class="mr-2 font-semibold text-[#475569]">
+            {{ isGridView ? 'List View' : 'Grid View' }}
+          </span>
         </a>
       </div>
     </div>
 
     <h1 class="text-2xl font-bold mt-2 mb-4">My images</h1>
 
-    <div class="p-4 grid grid-cols-4 gap-4">
+    <div *ngIf="!isGridView" class="p-4 grid grid-cols-4 gap-4">
 
         <div
             class="border rounded-xl overflow-hidden shadow hover:shadow-lg transition"
@@ -53,6 +56,73 @@
             </div>
         </div>
 
+    </div>
+
+    <div *ngIf="isGridView" class="p-4">
+      <table class="min-w-full overflow-hidden">
+        <thead class="border-b">
+          <tr>
+            <th class="px-4 py-2 text-left text-[#076C80] font-bold">#</th>
+            <th class="px-4 py-2 text-left text-gray-700">Project Name</th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>Date</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>Size (mb)</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">
+              <div class="flex items-center space-x-2">
+                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                <span>latitude</span>
+              </div>
+            </th>
+            <th class="px-4 py-2 text-left text-gray-700">longitude</th>
+            <th class="px-4 py-2 text-left text-gray-700">AbsoluteAltitude</th>
+            <th class="px-4 py-2 text-left text-gray-700">RelativeAltitude</th>
+            <th class="px-4 py-2 text-left text-gray-700">ImageDescription</th>
+            <th class="px-4 py-2 text-left text-gray-700">ISO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of rows">
+            <td class="px-4 py-2 text-left text-[#076C80] font-bold">{{ i }}</td>
+            <td class="px-4 py-2 text-left text-gray-700">
+              <div>
+                <div class="flex items-center">
+                <img src="imgicon2.png" alt="DB Icon" class="w-5 h-5" />
+                <span class="ml-2">DJI_0601.JPG</span>
+              </div>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">Jan 25, 2023</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center">
+                <span class="ml-6">100kb</span>
+              </div>
+            </td>
+            <td class="px-4 py-2 text-gray-700">
+              <div class="flex items-center ml-6">
+                16.742806067829367
+              </div>
+            </td>
+            <td class="px-4 py-2 text-left text-gray-700">100.1898659112698</td>
+            <td class="px-4 py-2 text-left text-gray-700">1.2</td>
+            <td class="px-4 py-2 text-left text-gray-700">150</td>
+            <td class="px-4 py-2 text-left text-gray-700">create bt dji camera</td>
+            <td class="px-4 py-2 text-left text-gray-700">104</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="flex justify-center mt-6 space-x-2">
