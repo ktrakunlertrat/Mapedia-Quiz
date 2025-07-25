@@ -59,70 +59,70 @@
     </div>
 
     <div *ngIf="isGridView" class="p-4">
-      <table class="min-w-full overflow-hidden">
-        <thead class="border-b">
-          <tr>
-            <th class="px-4 py-2 text-left text-[#076C80] font-bold">#</th>
-            <th class="px-4 py-2 text-left text-gray-700">Project Name</th>
-            <th class="px-4 py-2 text-left text-gray-700">
-              <div class="flex items-center space-x-2">
-                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
-                <span>Date</span>
-              </div>
-            </th>
-            <th class="px-4 py-2 text-left text-gray-700">
-              <div class="flex items-center space-x-2">
-                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
-                <span>Size (mb)</span>
-              </div>
-            </th>
-            <th class="px-4 py-2 text-left text-gray-700">
-              <div class="flex items-center space-x-2">
-                <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
-                <span>latitude</span>
-              </div>
-            </th>
-            <th class="px-4 py-2 text-left text-gray-700">longitude</th>
-            <th class="px-4 py-2 text-left text-gray-700">AbsoluteAltitude</th>
-            <th class="px-4 py-2 text-left text-gray-700">RelativeAltitude</th>
-            <th class="px-4 py-2 text-left text-gray-700">ImageDescription</th>
-            <th class="px-4 py-2 text-left text-gray-700">ISO</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let i of rows">
-            <td class="px-4 py-2 text-left text-[#076C80] font-bold">{{ i }}</td>
-            <td class="px-4 py-2 text-left text-gray-700">
-              <div>
+      <div class="overflow-x-auto max-w-full">
+        <table class="border-collapse min-w-max">
+          <thead class="border-b">
+            <tr>
+              <th class="px-4 py-2 text-left text-[#076C80] font-bold">#</th>
+              <th class="px-4 py-2 text-left text-gray-700">Project Name</th>
+              <th class="px-4 py-2 text-left text-gray-700">
+                <div class="flex items-center space-x-2">
+                  <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                  <span>Date</span>
+                </div>
+              </th>
+              <th class="px-4 py-2 text-left text-gray-700">
+                <div class="flex items-center space-x-2">
+                  <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                  <span>Size (mb)</span>
+                </div>
+              </th>
+              <th class="px-4 py-2 text-left text-gray-700">
+                <div class="flex items-center space-x-2">
+                  <img src="caredown2.png" alt="Down Icon" class="w-4 h-4" />
+                  <span>latitude</span>
+                </div>
+              </th>
+              <th class="px-4 py-2 text-left text-gray-700">longitude</th>
+              <th class="px-4 py-2 text-left text-gray-700">AbsoluteAltitude</th>
+              <th class="px-4 py-2 text-left text-gray-700">RelativeAltitude</th>
+              <th class="px-4 py-2 text-left text-gray-700">ImageDescription</th>
+              <th class="px-4 py-2 text-left text-gray-700">ISO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let i of rows">
+              <td class="px-4 py-2 text-left text-[#076C80] font-bold">{{ i }}</td>
+              <td class="px-4 py-2 text-left text-gray-700">
                 <div class="flex items-center">
-                <img src="imgicon2.png" alt="DB Icon" class="w-5 h-5" />
-                <span class="ml-2">DJI_0601.JPG</span>
-              </div>
-              </div>
-            </td>
-            <td class="px-4 py-2 text-gray-700">
-              <div class="flex items-center">
-                <span class="ml-6">Jan 25, 2023</span>
-              </div>
-            </td>
-            <td class="px-4 py-2 text-gray-700">
-              <div class="flex items-center">
-                <span class="ml-6">100kb</span>
-              </div>
-            </td>
-            <td class="px-4 py-2 text-gray-700">
-              <div class="flex items-center ml-6">
-                16.742806067829367
-              </div>
-            </td>
-            <td class="px-4 py-2 text-left text-gray-700">100.1898659112698</td>
-            <td class="px-4 py-2 text-left text-gray-700">1.2</td>
-            <td class="px-4 py-2 text-left text-gray-700">150</td>
-            <td class="px-4 py-2 text-left text-gray-700">create bt dji camera</td>
-            <td class="px-4 py-2 text-left text-gray-700">104</td>
-          </tr>
-        </tbody>
-      </table>
+                  <img src="imgicon2.png" alt="DB Icon" class="w-5 h-5" />
+                  <span class="ml-2">DJI_0601.JPG</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-gray-700">
+                <div class="flex items-center">
+                  <span class="ml-6">Jan 25, 2023</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-gray-700">
+                <div class="flex items-center">
+                  <span class="ml-6">100kb</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-gray-700">
+                <div class="flex items-center">
+                  <span class="ml-6">16.742806067829367</span>
+                </div>
+              </td>
+              <td class="px-4 py-2 text-gray-700">100.1898659112698</td>
+              <td class="px-4 py-2 text-gray-700">1.2</td>
+              <td class="px-4 py-2 text-gray-700">150</td>
+              <td class="px-4 py-2 text-gray-700">create bt dji camera</td>
+              <td class="px-4 py-2 text-gray-700">104</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="flex justify-center mt-6 space-x-2">
