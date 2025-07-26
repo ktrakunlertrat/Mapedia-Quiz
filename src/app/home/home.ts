@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
+import { RouterOutlet, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Header } from '../header/header';
+import { Sidebar } from '../sidebar/sidebar';
 
 @Component({
-  selector: 'app-main',
+  selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './main.html',
-  styleUrls: ['./main.css']
+  imports: [Header, Sidebar, RouterOutlet, CommonModule],
+  templateUrl: './home.html',
+  styleUrl: './home.css'
 })
-export class Main {
+export class Home {
   cards = Array.from({ length: 8 }, (_, i) => ({
     title: `images group`,
     img: 'imgicon.png'
